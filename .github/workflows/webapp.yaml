@@ -25,9 +25,8 @@ jobs:
         run: doctl registry login --expiry-seconds 600
       
       - name: Tag image
-        run:  
-         sudo docker tag my-app:latest registry.digitalocean.com/demo-cicd-docker-registry/my-app:latest
+        run: docker tag my-app:latest registry.digitalocean.com/demo-cicd-docker-registry/my-app:latest
 
       - name: Push Image to DO Container Registry
-        run: sudo docker push registry.digitalocean.com/demo-cicd-docker-registry/my-app:latest
+        run: docker push registry.digitalocean.com/demo-cicd-docker-registry/my-app:latest
 
